@@ -10,7 +10,7 @@ jobs:
         run: |
           echo First Line
           echo Second Line
-      - name: Python
+  my_python:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         run: python 1.py
