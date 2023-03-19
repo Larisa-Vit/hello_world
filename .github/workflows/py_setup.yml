@@ -11,6 +11,8 @@ jobs:
           echo First Line
           echo Second Line
   my_python:
+    runs-on: ubuntu-latest
+    steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v3
       - name: Install dependencies
