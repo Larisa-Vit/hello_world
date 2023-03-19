@@ -10,6 +10,15 @@ jobs:
         run: |
           echo First Line
           echo Second Line
+  my_python:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8 pytest
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          python 1.py
 
 
 
