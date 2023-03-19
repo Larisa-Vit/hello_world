@@ -10,15 +10,24 @@ jobs:
         run: |
           echo First Line
           echo Second Line
-      - name: qwerty
-      - uses: actions/checkout@v3
-      - name: my_python
-      - uses: actions/setup-python@v3
-      - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          // pip install flake8
-          python 1.py
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10"]
+    steps:
+    - uses: actions/checkout@v3
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v3
+      with:
+        python-version: ${{ matrix.python-version }}
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install pylint
+    - name: My Run
+      run:  |
+        python 1.py
 
 
 
