@@ -1,4 +1,4 @@
-name: Print
+name: Print and Python
 on: [push, workflow_dispatch]
 jobs:
   print:
@@ -10,6 +10,7 @@ jobs:
         run: |
           echo First Line
           echo Second Line
-
-
-
+      - name: Python
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        run: python 1.py
