@@ -1,6 +1,5 @@
 name: Print
 on: [push, workflow_dispatch]
-
 jobs:
   print:
     runs-on: ubuntu-latest
@@ -11,6 +10,7 @@ jobs:
         run: |
           echo First Line
           echo Second Line
+      - name: qwerty
       - uses: actions/checkout@v3
       - name: my_python
       - uses: actions/setup-python@v3
